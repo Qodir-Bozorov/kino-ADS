@@ -1,0 +1,140 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'ProximaNova', 'Open sans', sans-serif;
+  background-color: #415fa9;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 1040px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*/////////////////*/
+
+.films {
+  max-width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row; 
+}
+
+.film {
+  text-align: center;
+  /* background-color: #fff; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.film-image {
+  position: absolute;
+  top: -30px;
+  left: center;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+}
+
+
+
+.txt-wrapper {
+  margin-top: auto;
+  padding: 20px;
+}
+
+.prices {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.film-name {
+  margin: 0;
+  padding: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.film-description {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+}
+
+
+.new-price {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(22, 175, 47);
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-weight: 600;
+  color: #999;
+}
+
+.buy-link {
+  width: 100%;
+  background-color: #333;
+  padding: 10PX 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 22px;
+  color: #fff;
+}
+
+.backyard {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%) scale(0);
+  width: 360px;
+  background-color: #fff;
+  position: relative;
+  height: 650px;
+  z-index: -1;
+}
+
+.film-image:hover + .backyard{  
+  animation: chiqish 0.5s forwards;
+}
+
+
+@keyframes chiqish {
+  0% {transform: translateY(-8%) scale(0.1);}
+  25% {transform: translateY(-5%) scale(0.3);}
+  50% {transform: translateY(-2.5%) scale(1.1);}
+  100% {transform: translateY(0) scale(1); border-radius: 5px;}
+}
